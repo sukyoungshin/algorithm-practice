@@ -26,7 +26,7 @@ function solution(n) {
 const solution = (n) => {
   let answer = '';
   for(let i = 0; i < n; i++){
-    answer = answer + "수박"[i%2];
+    answer = answer + "수박"[i%2]; // +=은 속도이슈로 풀어서 쓰는 것을 권장
   }
   return answer;
 };
