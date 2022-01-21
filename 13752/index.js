@@ -16,3 +16,5 @@ function solution(numberOfLine, eachNumberArray) {
 solution(numberOfLine, eachNumberArray);
 
 // for과 if 위주로 사용해라
+
+// for of

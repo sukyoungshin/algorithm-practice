@@ -21,3 +21,5 @@ function guessingPersianKingsAge(emptyArray) {
 }
 
 guessingPersianKingsAge(emptyArray);
+
+// while문 써보자 다음엔
