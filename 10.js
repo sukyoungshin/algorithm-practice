@@ -20,6 +20,7 @@
 //   let answer = Math.ceil(student / 12);
 //   return answer;
 // };
+// console.log( solution(25) );
 
 // 2 
 // function solution(student) {

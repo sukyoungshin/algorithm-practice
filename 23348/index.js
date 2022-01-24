@@ -65,59 +65,7 @@ function solution() {
 
   getSumOfEachPlayersScore(numberOfPlayersArray); // [ 42, 18, 36, 0, 6, 54 ]
   getSumOfEachTeamsScore(numberOfPlayersArray, numberOfTeamsArray); // [96, 60]
-  const result = searchHighScoreAmoungTeams(numberOfTeamsArray); // 96
-  return result;
+  return searchHighScoreAmoungTeams(numberOfTeamsArray); // 96
 };
 
 console.log( solution() );
-
-
-
-// 원래 코드
-// function createNumberOfTeamsArray() {
-//   const sumArray = [];
-//   for (let i = 0; i < numberOfTeams; i++) {
-//     sumArray.push(i);
-//   };
-//   return sumArray;
-// };
-
-// function collectSumOfUserScores() {
-//   const array = [];
-//   for (let i = 0; i < players.length; i++) {
-//     array.push(0);
-//   }
-//   return array;
-// };
-
-// function comparison( ) {
-//   const sumOfTeamsArray = createNumberOfTeamsArray();
-//   const sumOfUserScores = collectSumOfUserScores();
-
-//   for (let i = 0; i < players.length; i++) {
-//     const userScores = players[i].split(' ').map(v => parseInt(v));
-//     let sum  = 0;
-//     for (let j = 0; j < userScores.length; j++) {
-//       sum = sum + userScores[j] * score[j]
-//     }
-//     sumOfUserScores[i] = sum;
-//   }
-
-//   for (let j = 0; j < numberOfTeams; j++) {
-//     let sum = 0;
-//     for (let i = 0; i < 3; i++) {
-//       sum = sum + sumOfUserScores[i + j*3];
-//     }
-//     sumOfTeamsArray[j] = sum;
-//   }
-
-//   let max = sumOfTeamsArray[0];
-//   for (let i = 0; i < sumOfTeamsArray.length; i++) {
-//     if (sumOfTeamsArray[i] > max) {
-//       max = sumOfTeamsArray[i]
-//     }
-//   }
-//   return max;
-// };
-
-// console.log( comparison() );
