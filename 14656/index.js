@@ -8,7 +8,7 @@ const input = require('fs')
 const numberOfStudents = parseInt(input[0]); 
 const currentOrderOfStudentArray = input[1].split(' ').map(v => parseInt(v)); // [3, 2, 5, 4, 1]
 
-function createCorrectOrderArray() {
+function createExpectedOrdersOfStudents() {
   const expectedOrderOfStudents = [];
   for (let i = 1; i <= numberOfStudents; i++) {
     expectedOrderOfStudents.push(i);
@@ -35,7 +35,7 @@ function countNumberOfIncorrect(compareOrder) {
 };
 
 function solution() {
-  const correctOrderArray = createCorrectOrderArray();
+  const correctOrderArray = createExpectedOrdersOfStudents();
   const compareOrder = compareOrderOfStudents(correctOrderArray, currentOrderOfStudentArray);
   return countNumberOfIncorrect(compareOrder);
 };

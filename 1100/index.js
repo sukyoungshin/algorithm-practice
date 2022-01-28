@@ -1,8 +1,9 @@
 // https://www.acmicpc.net/problem/1100
 
-const fs = require('fs');
-const input = fs.readFileSync('./input4.txt').toString().split('\n');
-
+const input = require('fs')
+  .readFileSync('./input4.txt')
+  .toString()
+  .split('\n');
 const array = [];
 let count = 0;
 
@@ -29,3 +30,5 @@ function solution() {
 
 console.log( solution() );
 
+// 8x8칸을 0,1,0,1,,,로 채워넣은뒤 비교해도 됨
+// --> 함수로 정리

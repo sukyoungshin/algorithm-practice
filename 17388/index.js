@@ -34,7 +34,7 @@ function searchMinNumber(input) {
 
 const nameOfSchools = ['Soongsil', 'Korea', 'Hanyang', 'SiwonSchool', 'PizzaSchool'];
 
-function searchSchools(minNumber, input) {
+function matchSchoolsWithMinNumber(minNumber, input) {
   const schoolsArray = nameOfSchools
     .filter(( _, index) => minNumber === input[index]); // 가독성 고려하여 띄어서 표현
   return schoolsArray;
@@ -45,11 +45,13 @@ function solution(input) {
   if (answer >= 100) return 'OK';
 
   let minNumber = searchMinNumber(input); // caching -> dp
-  const result = searchSchools(minNumber, input);
+  const result = matchSchoolsWithMinNumber(minNumber, input);
   return result;
 };
 console.log( solution(input) );
 
+// sort() 찾아보기
+// --> main 코드부터 보고 세부코드를 확인한다.
 
 // before refactoring (for, if)
 // function sum(input) {
@@ -72,7 +74,7 @@ console.log( solution(input) );
 
 // const nameOfSchools = ['Soongsil', 'Korea', 'Hanyang', 'SiwonSchool', 'PizzaSchool'];
 
-// function searchSchools(minNumber, input) {
+// function matchSchoolsWithMinNumber(minNumber, input) {
 //   for (let i = 0; i < input.length; i++) {
 //     if (minNumber === input[i]) {
 //       schoolsArray.push(nameOfSchools[i]);
@@ -86,7 +88,7 @@ console.log( solution(input) );
 //   if (answer >= 100) return 'OK';
 
 //   let minNumber = searchMinNumber(input); // caching -> dp
-//   const result = searchSchools(minNumber, input);
+//   const result = matchSchoolsWithMinNumber(minNumber, input);
 //   return result;
 // };
 // console.log( solution(input) );

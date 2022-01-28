@@ -8,18 +8,9 @@ let [ score, teams, ...players ] = require('fs')
 score = score.split(' ').map(v => parseInt(v)); // [3, 6, 9]
 teams = parseInt(teams); // 2
 
-// 리펙터링...
-function createNumberOfTeamsArray() {
-  const numberOfTeamsArray = [];
-  for (let i = 0; i < teams; i++) {
-    numberOfTeamsArray.push(0);
-  };
-  return numberOfTeamsArray; 
-};
-
-function createNumberOfPlayersArray() {
+function createEmptyArray(size) {
   const array = [];
-  for (let i = 0; i < players.length; i++) {
+  for (let i = 0; i < size; i++) {
     array.push(0);
   }
   return array; 
@@ -60,8 +51,8 @@ function searchHighScoreAmoungTeams(numberOfTeamsArray) {
 };
 
 function solution() {
-  const numberOfTeamsArray = createNumberOfTeamsArray(); // [0, 0]
-  const numberOfPlayersArray = createNumberOfPlayersArray(); // [0, 0, 0, 0, 0, 0]
+  const numberOfTeamsArray = createEmptyArray(teams); // [0, 0]
+  const numberOfPlayersArray = createEmptyArray(players.length); // [0, 0, 0, 0, 0, 0]
 
   getSumOfEachPlayersScore(numberOfPlayersArray); // [ 42, 18, 36, 0, 6, 54 ]
   getSumOfEachTeamsScore(numberOfPlayersArray, numberOfTeamsArray); // [96, 60]
@@ -69,3 +60,21 @@ function solution() {
 };
 
 console.log( solution() );
+
+
+// 기존에는 아래처럼 배열을 만드는 함수를 두개를 썼는데, 재사용성을 위해 하나로 바꾸었음 createEmptyArray()
+// function createNumberOfTeamsArray() {
+//   const numberOfTeamsArray = [];
+//   for (let i = 0; i < teams; i++) {
+//     numberOfTeamsArray.push(0);
+//   };
+//   return numberOfTeamsArray; 
+// };
+
+// function createNumberOfPlayersArray() {
+//   const array = [];
+//   for (let i = 0; i < players.length; i++) {
+//     array.push(0);
+//   }
+//   return array; 
+// };
