@@ -1,11 +1,13 @@
 // https://www.acmicpc.net/problem/10599
 
-const fs = require('fs');
-const input = fs.readFileSync('./input1.txt').toString().split('\n');
+const input = require('fs')
+  .readFileSync('./input1.txt')
+  .toString()
+  .split('\n');
+  
 const emptyArray = [];
-
 for(let i = 0; i < input.length; i++) {
-  emptyArray.push( input[i].split(' ').map(num => Number(num)) );
+  emptyArray.push( input[i].split(' ').map(num => parseInt(num)) );
 }
 
 function guessingPersianKingsAge(emptyArray) {

@@ -8,11 +8,11 @@ const [k, d, a] = require('fs')
 const HASU = 'hasu';
 const GOSU = 'gosu';
 
-  function solution(k, d, a) {
-    if (k + a < d || d === 0) return HASU;
-    return GOSU;
-  }
+function solution(k, d, a) {
+  if (k + a < d || d === 0) return HASU;
+  return GOSU;
+};
 
-console.log( solution(k, d, a) );
+console.log(solution(k, d, a));
 
 

@@ -1,27 +1,31 @@
 // https://www.acmicpc.net/problem/1100
 
 const input = require('fs')
-  .readFileSync('./input4.txt')
+  .readFileSync('./input1.txt')
   .toString()
   .split('\n');
-const array = [];
-let count = 0;
+
+function isEven (hor, ver) {
+  return hor % 2 === 0 && ver % 2 === 0;
+};
+
+function isOdd (hor, ver) {
+  return hor % 2 !== 0 && ver % 2 !== 0;
+};
+
+function isIncludeF (hor, ver) {
+  return input[hor][ver].includes('F') === true;
+};
 
 function solution() {
-  for (let i = 0; i < input.length; i++) {
-    for (let j = 0; j < input[i].length; j++) {
-      if (i % 2 === 0) {
-        if (j % 2 === 0) {
-          if(input[i][j].includes('F') === true ) {
-            count++;
-          }
-        }
-      } else if (i % 2 !== 0) {
-        if (j % 2 !== 0) {
-          if( input[i][j].includes('F') === true ) {
-            count++;
-          }
-        }
+  let count = 0;
+
+  for (let hor = 0; hor < input.length; hor++) {
+    for (let ver = 0; ver < input[hor].length; ver++) {
+      if (isEven(hor, ver) && isIncludeF(hor, ver)) {
+        count++;
+      } else if (isOdd(hor, ver) && isIncludeF(hor,ver)) {
+        count++;
       }
     }
   }
@@ -31,4 +35,3 @@ function solution() {
 console.log( solution() );
 
 // 8x8칸을 0,1,0,1,,,로 채워넣은뒤 비교해도 됨
-// --> 함수로 정리
