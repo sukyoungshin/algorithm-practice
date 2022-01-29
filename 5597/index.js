@@ -1,28 +1,42 @@
 // https://www.acmicpc.net/problem/5597
 
-const getInputNumberArray = require('fs')
+const inputs = require('fs')
   .readFileSync('./input1.txt')
   .toString()
   .split('\n')
-  .map(v => Number(v));
+  .map(v => parseInt(v));
 
-function getBasicOrderArray() {
+function getExpectedOrderOfNumbers() {
   const array = [];
-  for (let i = 1; i <= 30; i++) {
+  for (let i = 1; i < 31; i++) {
     array.push(i);
   }
   return array;
 };
 
-function solution() {
-  const basicOrder = getBasicOrderArray(); // [1, 2, 3, ... 30]
-
-  const filteredOrder = [];
-  for (let i = 0; i < getInputNumberArray.length; i++) {
-    filteredOrder.push( basicOrder.filter(num => num !== getInputNumberArray[i]) );
+function searchMissingNumbers(currentOrder, expectedOrder) {
+  const array = [];
+  const set = new Set(currentOrder);
+  for (let i = 1; i < expectedOrder.length + 1; i++) {
+    array.push(set.has(i)) 
   }
-  return filteredOrder;
+  return array; 
+};  
 
+function searchIndexOfMissingNumbers(missingNumbers) {
+  for (let i = 0; i < missingNumbers.length; i++) {
+    if( missingNumbers[i] === false) {
+      console.log(i + 1);
+    }
+  }
+};
+
+function solution() {
+  const expectedOrder = getExpectedOrderOfNumbers(); // [1, 2, 3, ... 30]
+  const currentOrder = inputs.sort((a, b) => a - b); // [1, 3, 4, 5, 6, 7, 9,,,]
+  const missingNumbers = searchMissingNumbers(currentOrder, expectedOrder); // [true, false, true, true,,,,, ]
+  const indexOfMissingNumbers = searchIndexOfMissingNumbers(missingNumbers);
+  return indexOfMissingNumbers;
 };
 
 solution();
