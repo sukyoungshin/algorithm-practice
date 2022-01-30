@@ -40,3 +40,7 @@ function solution() {
 };
 
 solution();
+
+// index 숫자만 증가시켜서 할 수도 있음
+// [1,2, 3,,,, 30] 배열에서 set 이용해서 풀 수도 있을 듯
+// 
