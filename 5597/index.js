@@ -33,7 +33,7 @@ function searchIndexOfMissingNumbers(missingNumbers) {
 
 function solution() {
   const expectedOrder = getExpectedOrderOfNumbers(); // [1, 2, 3, ... 30]
-  const currentOrder = inputs.sort((a, b) => a - b); // [1, 3, 4, 5, 6, 7, 9,,,]
+  const currentOrder = inputs.sort((a, b) => a - b); // [1, 3, 4, 5, 6, 7, 9,,,] --> sort때문에 속도 느려짐
   const missingNumbers = searchMissingNumbers(currentOrder, expectedOrder); // [true, false, true, true,,,,, ]
   const indexOfMissingNumbers = searchIndexOfMissingNumbers(missingNumbers);
   return indexOfMissingNumbers;

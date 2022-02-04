@@ -11,9 +11,9 @@ function getEachParticipantsScore(inputs) {
   return array;
 };
 
-function getSumOfEachParticipantsScore(eachParticipantsScore) {
+function sum(list) {
   const array = [];
-  eachParticipantsScore.forEach(v => array.push(v.reduce((prev, acc) => {return prev + acc}, 0)));
+  list.forEach(v => array.push(v.reduce((prev, acc) => {return prev + acc}, 0)));
   return array;  
 };
 
@@ -27,14 +27,19 @@ function getBestScoreAndIndex(SumOfEachParticipantsScore) {
       id = i + 1;
     }
   }
-  return Number(id)+' '+Number(max);
+  return `${id} ${max}`;
 };
 
 function solution() {
   const eachParticipantsScore = getEachParticipantsScore(inputs); //[[ 5, 4, 4, 5 ], [ 5, 4, 4, 4 ], [ 5, 5, 4, 4 ], [ 5, 5, 5, 4 ], [ 4, 4, 4, 5 ]]
-  const SumOfEachParticipantsScore = getSumOfEachParticipantsScore(eachParticipantsScore); // [ 18, 17, 18, 19, 17 ]
+  const SumOfEachParticipantsScore = sum(eachParticipantsScore); // [ 18, 17, 18, 19, 17 ]
   const result = getBestScoreAndIndex(SumOfEachParticipantsScore); // 4 19
   return result;
 };
 
-console.log( solution() );
+console.log(solution());
+
+// function()에서 parameter값 받을때 명시적으로 나타내주는게 좋을 것 -> 글구 pascal 쓰지마.. 
+// init() 함수를 만들어서 전역변수를 안에 넣어주면 전역변수를 어디서 쓰는지 명확하게 알 수 있음
+// 함수를 얼마나 세부적으로 쪼개는지도 고민거리 -> 무엇보다도 상대방이 알아보기 쉽게 짜는것이 중요
+// 체이닝일때 한칸한칸 띄어써주면 나중에 디버깅이 쉬워짐!
