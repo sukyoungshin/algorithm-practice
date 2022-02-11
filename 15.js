@@ -1,4 +1,5 @@
-// 1. 학급 회장(해쉬)
+// hash
+
 function init() {
   const numberOfStudents = 15;
   const currentCandidates = 'BACBACCACCBDEDE'.split(''); // ['A', 'A', 'B', 'E', 'D']
@@ -13,18 +14,18 @@ function convertArrayToObject(candidates) {
     obj[keys] = 0;
   }
   return obj;
-};
+}; // { A:2, B:1,,,,E:0 }
 
 function countResultOfVote(candidates, resultOfVote) {
   for (let i = 0; i < resultOfVote.length; i++) {
-    let keys = resultOfVote[i];
+    const keys = resultOfVote[i];
     candidates[keys] += 1; 
   }
   return candidates;
 };
 
 // for in으로 바꿔보기
-function getResult(countObj) {
+function getKeyOfMaxNumber(countObj) {
   const objectKeys = Object.keys(countObj); 
   const objectValue = Object.values(countObj); 
   let student = objectKeys[0];
@@ -42,7 +43,10 @@ function solution() {
   const { currentCandidates, expectedCandidates} = init(); 
   const candidateObj = convertArrayToObject(expectedCandidates); 
   const count = countResultOfVote(candidateObj, currentCandidates);
-  const result = getResult(count); 
+  const result = getKeyOfMaxNumber(count); 
   return result;
 };
 console.log(solution());
+
+// const expectedCandidates = ['A', 'B', 'C', 'D', 'E']; 대신 general 대신
+// 값을 대입할땐 삼항, 사이드 이펙트가 고려되면 if문
