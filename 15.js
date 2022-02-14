@@ -1,5 +1,4 @@
 // hash
-
 function init() {
   const numberOfStudents = 15;
   const currentCandidates = 'BACBACCACCBDEDE'.split(''); // ['A', 'A', 'B', 'E', 'D']

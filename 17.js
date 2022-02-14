@@ -1,3 +1,4 @@
+// hash
 function init() {
   const word1 = 'DC';
   const word2 = 'DCB';
