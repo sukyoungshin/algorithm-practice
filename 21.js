@@ -41,7 +41,9 @@ function getNumberOfValidDolls(moves, boards) {
       const pickedDoll = boards[boardIndex].pop();
       basketStack.push(pickedDoll);
       // basketStack에 있는 popped된 이전 값과 같은 값이 들어오면 없애주고, number + 2 
-      if (pickedDoll === prevDoll) {
+      if (prevDoll === pickedDoll) {
+        basketStack.pop();
+        basketStack.pop();
         number += 2;
       } 
     }
@@ -53,7 +55,7 @@ function getNumberOfValidDolls(moves, boards) {
 function solution(board, moves) {
   const boardStack = createEachStack(board); // [ [ 3, 4 ], [ 5, 2, 2 ], [ 1, 4, 5, 1 ], [ 3, 4 ], [ 1, 2, 1, 3 ] ]
   const vaildDolls = getNumberOfValidDolls(moves, boardStack); 
-  return vaildDolls*2;
+  return vaildDolls;
 };
 
 console.log(solution(board, moves));
