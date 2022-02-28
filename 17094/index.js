@@ -1,5 +1,5 @@
-// https://www.acmicpc.net/problem/17094
-// require('fs').readFileSync('/dev/stdin').toString()
+// 구현, 문자열
+// Serious Problem https://www.acmicpc.net/problem/17094
 const input = require('fs')
   .readFileSync('./input1.txt')
   .toString()

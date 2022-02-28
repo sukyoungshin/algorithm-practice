@@ -1,4 +1,5 @@
-// https://www.acmicpc.net/problem/10156
+// 수학, 사칙연산
+// 과자 https://www.acmicpc.net/problem/10156
 
 const [ k, n, m ] = require('fs')
   .readFileSync('./input1.txt')

@@ -1,4 +1,5 @@
-// https://www.acmicpc.net/problem/1100
+// 구현, 문자열
+// 하얀 칸 https://www.acmicpc.net/problem/1100
 
 const input = require('fs')
   .readFileSync('./input1.txt')

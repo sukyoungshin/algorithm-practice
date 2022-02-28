@@ -1,3 +1,4 @@
+// 문제 잘못이해함 ㅅㄱ
 function init() {
   const number = 6;
   const numberArray = [7, 3, 9, 5, 6, 12];

@@ -1,4 +1,5 @@
-// https://www.acmicpc.net/problem/2953
+// 수학, 구현, 사칙연산
+// 나는 요리사다 https://www.acmicpc.net/problem/2953
 
 const inputs = require('fs')
   .readFileSync('./input1.txt')

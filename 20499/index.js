@@ -1,4 +1,5 @@
-// https://www.acmicpc.net/problem/20499
+// 수학, 사칙연산
+// Darius님 한타 안 함? https://www.acmicpc.net/problem/20499
 
 const [k, d, a] = require('fs')
   .readFileSync('./input2.txt')

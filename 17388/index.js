@@ -1,4 +1,5 @@
-// https://www.acmicpc.net/problem/17388
+// 구현
+// 와글와글 숭고한 https://www.acmicpc.net/problem/17388
 // for, if문으로 짠 뒤 -> method 이용하여 변경하는 연습
 
 const input = require('fs')

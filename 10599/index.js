@@ -1,4 +1,5 @@
-// https://www.acmicpc.net/problem/10599
+// 수학, 구현, 사칙연산
+// 페르시아의 왕들 https://www.acmicpc.net/problem/10599
 
 const input = require('fs')
   .readFileSync('./input1.txt')

@@ -1,4 +1,5 @@
-// https://www.acmicpc.net/problem/5354
+// 구현
+// J박스 https://www.acmicpc.net/problem/5354
 
 function init() {
   const inputs = require('fs')

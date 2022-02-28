@@ -1,5 +1,5 @@
+// 스택, 문자열
 // 단어순서 뒤집기 : https://www.acmicpc.net/problem/12605
-
 const [numberOfTest, ...words] = require('fs')
   .readFileSync('./input1.txt')
   .toString()

@@ -1,4 +1,5 @@
-// https://www.acmicpc.net/problem/23348
+// 수학, 구현, 사칙연산
+// 스트릿 코딩 파이터 https://www.acmicpc.net/problem/23348
 
 let [ score, teams, ...players ] = require('fs')
   .readFileSync('./input1.txt')
