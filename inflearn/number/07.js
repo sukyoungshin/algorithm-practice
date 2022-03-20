@@ -15,7 +15,7 @@ function getMaxNumber(numbers) {
 function getSumOfRestNumbers(numbers, max) {
   let sum = 0;
   for (let i = 0; i < numbers.length; i++) {
-    sum = sum + numbers[i]
+    sum = sum + numbers[i];
   }
   sum = sum - max;  
   return sum;
