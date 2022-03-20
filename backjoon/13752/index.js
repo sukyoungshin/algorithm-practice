@@ -1,5 +1,8 @@
 const fs = require('fs');
-const input = fs.readFileSync('./input2.txt').toString().split('\n');
+const input = fs
+  .readFileSync('./input2.txt')
+  .toString()
+  .split('\n');
 const numberOfLine = parseInt(input[0]); // 줄 수
 
 function createArray() {
