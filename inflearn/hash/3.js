@@ -1,37 +1,17 @@
 // 큰 수 출력하기
-// 문제 잘 못 이해함 -> 다시 풀어야 됨
-function init() {
-  const number = 6;
-  const numberArray = [7, 3, 9, 5, 6, 12];
-  return {number, numberArray};
-};
+const numberArray = [7, 3, 9, 5, 6, 12];
 
-function findPrevNumber(number, array) {
-  for (let i = 0; i < array.length; i++) {
-    if (number === array[i]) {
-      const prevNumber = i - 1;
-      return array[prevNumber];
-    }
-  }
-};
+function solution(array) {
+  let answer = array[0]; // 7
 
-function findBiggerNumbers(number, index, array) {
-  const emptyArray = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] > index) {
-      emptyArray.push(array[i]);
-    }
-  }
-  if (!emptyArray.includes(number)) {
-    emptyArray.push(number);
-  }
-  return emptyArray;
-};
+  for (let i = 1; i < array.length; i++) {
+    const PREV = array[i-1];
+    const CURR = array[i];
 
-function solution() {
-  const {number, numberArray} = init();
-  const prevNumber = findPrevNumber(number, numberArray); // 자신의 바로 앞 수
-  const biggerNumbers = findBiggerNumbers(number, prevNumber, numberArray); // 앞 수보다 큰 수만 한 줄로 출력
-  return biggerNumbers;
-};
-console.log(solution());
+    if (PREV > CURR) continue;
+    answer = answer + ' ' + CURR;
+  }
+  return answer;
+}
+
+console.log(solution(numberArray));
