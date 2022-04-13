@@ -1,32 +1,47 @@
 // Two pointer 알고리즘
 // - 인덱스 두개를 동시에 컨트롤하는것
-const str1 = 'oiasjdfiojaweoijfoiwjefoaofijwfeijoaef';
-const str2 = 'abcbaaaabbbddddabcdcbaee';
 
-const isBothSame = function(string, center, compare) {
-  if (string[center-compare] === undefined || string[center+compare] === undefined) return false;
-  return (string[center-compare] === string[center+compare]);
+const input1 = "babad"; 
+const input2 = "cbbd"; 
+const input3 = 'oiasjdfiojaweoijfoiwjefoaofijwfeijoaef';
+const input4 = 'abcbaaaabbbddddabcdcbaee';
+
+const isBothSame = function(string, position, length) {
+  const left = string[position-length];
+  const right = string[position+length];
+
+  if (left === undefined || right === undefined) return false;
+  return (left === right);
 };
 
-const longestPalindromicSubstring = function(string, center) {
-  for (let i = 0; i < string.length; i++) {  
+const getOddPalinedromeLength = function(string, center) {
+  for (let i = 0; i < string.length; i++) {
     if (isBothSame(string, center, i)) continue;
     return i;
   }
 };
 
-const isPalindromic = function(string) {
+const getEvenPalinedromeLength = function(string, center) {
+  for (let i = 0; i < string.length; i++) {
+    if (isBothSame(string, center, i)) continue;
+    return i;
+  }
+};
+
+const isEvenPalindrome = function(string) {
+  return !(string.length % 2);
+};
+
+const longestPalidrome = function(string) {
   let position;
   let longest = 0;
   for (let i = 0; i < string.length; i++) {
-    const len = longestPalindromicSubstring(string, i); 
-    if (longest < len) {
-      longest = len;
+    const length = getLength(string, i); 
+    if (longest < length) {
+      longest = length;
       position = i;
     }
   }
   return string.substring(position - (longest - 1), position + longest);
-};
 
-console.log(isPalindromic(str1));
-console.log(isPalindromic(str2));
+};
