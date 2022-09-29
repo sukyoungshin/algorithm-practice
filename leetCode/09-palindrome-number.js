@@ -4,6 +4,7 @@
  * @param {number} x
  * @return {boolean}
  */
+// 1.
 const isPalindrome = function(x) {
   x = String(x); 
   const order = getOrderedArray(x);
@@ -29,6 +30,20 @@ const getReversedArray = (arr) => {
 
   return array;
 };
+
+// 2.
+const isPalindrome = function(x) {
+  x = String(x); 
+  const n = x.length;
+  
+  for (let i = 0; i < Math.floor(n/2); i++) {
+    if (x[i] !== x[n-i-1]) {
+      return false;
+    }
+
+  }
+  return true;
+}
 
 const x1 = 121; // true
 const x2 = -121; // false
