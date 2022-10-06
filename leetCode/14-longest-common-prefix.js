@@ -1,5 +1,6 @@
 // 14 Longest Common Prefix (https://leetcode.com/problems/longest-common-prefix/)
 
+// 1
 /**
  * @param {string[]} strs
  * @return {string}
@@ -15,6 +16,31 @@ const longestCommonPrefix = function(strs) {
 
   return strs[0];
 };
+
+
+// 2.
+ const longestCommonPrefix = function(strs) {
+  let prefix = strs[0];
+  for (let i = 1; i < strs.length; i++) {
+    prefix = compare(prefix, strs[i]);
+  }
+
+  return prefix;
+};
+
+const compare = (str1, str2) => {
+  let answer = '';
+  for (let i = 0; i < str2.length; i++) {
+    if (str1[i] === str2[i]) {
+      answer += str1[i];
+    } else {
+      return answer;
+    }
+  }
+
+  return answer;
+};
+
 
 const strs1 = ["flower","flow","flight"];
 const strs2 = ["dog","racecar","car"];
