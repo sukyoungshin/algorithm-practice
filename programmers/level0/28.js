@@ -1,5 +1,6 @@
 // 로그인 성공?
 // 1
+// some, for, while
 function solution(id_pw, db) {
   const [ID, PW] = id_pw;
 
