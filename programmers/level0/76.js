@@ -37,7 +37,7 @@ function solution(letter) {
   return answer;
 }
 
-// 2nd
+// 2nd (해쉬)
 function solution(letter) {
   return letter
     .split(" ")
